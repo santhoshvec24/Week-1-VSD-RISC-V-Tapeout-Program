@@ -48,8 +48,21 @@ ls
 cd ..
 ls
 ```
-After  cloning the git
+
 <img width="986" height="849" alt="Screenshot from 2025-09-23 12-13-47" src="https://github.com/user-attachments/assets/e4ffdbff-11d6-4207-ba73-60b710b17b42" />
 
+After  cloning the git
+
 ```bash
+ls
+iverilog good_mux.v tb_good_mux.v
+ls
+# To dump the vcd file
+. /a.out
+```
+If you want to change the desgin
+```bash
+gvim tb_good_mux.v -o good_mux.v
+```
+
 
