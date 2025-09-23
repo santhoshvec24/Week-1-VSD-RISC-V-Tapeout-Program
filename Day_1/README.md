@@ -1,5 +1,6 @@
 # Day 1: Introduction to Verilog RTL Design & Synthesis
-
+#### This document covers the complete workflow of a 2:1 Multiplexer using Verilog in Yosys and th SkyWater 130nm standard cell library.
+---
 ### *SKY130RTL D1SK1 L1 Introduction to iverilog design and test bench*
 ### Simulator
 - A simulator is a software tool that checks your digital circuit’s functionality by applying test inputs and viewing outputs. This helps you verify your design before hardware implementation.
@@ -25,6 +26,7 @@
 ### GTKWave
 - It is used for viewing the waveform.
 
+---
 ### SKY130RTL D1SK2 L1 Lab1 introduction to lab
 For cloning the git https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
 
@@ -51,7 +53,7 @@ ls
 
 <img width="986" height="849" alt="Screenshot from 2025-09-23 12-13-47" src="https://github.com/user-attachments/assets/e4ffdbff-11d6-4207-ba73-60b710b17b42" />
 
-After  cloning the git
+## After  cloning the git
 
 ```bash
 ls
@@ -64,5 +66,44 @@ If you want to change the desgin
 ```bash
 gvim tb_good_mux.v -o good_mux.v
 ```
+---
+
+### Verilog Code Analysis
+
+**The code for the multiplexer (`good_mux.v`):**
+
+```verilog
+module good_mux (input i0, input i1, input sel, output reg y);
+always @ (*)
+begin
+    if(sel)
+        y <= i1;
+    else 
+        y <= i0;
+end
+endmodule
+```
+
+###  **How It Works**
+
+**Inputs:**
+- Data Inputs: `i0`, `i1`
+- Selection Line: `sel`
+
+**Registered Output:** `y`
+
+**Logic:**
+  - If `sel`= 1, `y`=`i1`
+  - If `sel`= 0, `y`=`i0`.
+
+---
+## Introduction to Yosys
+ - Yosys is a powerful open-source synthesis tool for digital hardware. 
+ - It takes your Verilog code and converts it into a gate-level netlist.
+ - The set of primary inputs and outputs of the design code should be same.
+ - Verification of the netlist file can be done by generating gtkwave for netlist file.
+ - The same TB can be used in verification process.
+
+<img width="1202" height="335" alt="image" src="https://github.com/user-attachments/assets/474e9689-f92b-4234-8a79-444eef05c397" />
 
 
