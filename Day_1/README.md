@@ -25,4 +25,29 @@
 ### GTKWave
 - It is used for viewing the waveform.
 
-git clone it in your windows https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git for the further process.
+### SKY130RTL D1SK2 L1 Lab1 introduction to lab
+For cloning the git https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
+
+```bash
+sudo -i
+sudo apt-get install git
+cd /home
+# for the vbox users
+cd vboxuser 
+cd vsd
+cd VLSI
+git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
+cd sky130RTLDesignAndSynthesisWorkshop
+cd my_lib
+cd verilog_model/
+cd ..
+ls
+cd ..
+cd verilog_files/
+ls
+cd ..
+ls
+```
+After  cloning the git
+```bash
+
