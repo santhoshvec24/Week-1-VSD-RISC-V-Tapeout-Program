@@ -40,14 +40,7 @@ cd vsd
 cd VLSI
 git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
 cd sky130RTLDesignAndSynthesisWorkshop
-cd my_lib
-cd verilog_model/
-cd ..
-ls
-cd ..
 cd verilog_files/
-ls
-cd ..
 ls
 ```
 
@@ -56,7 +49,6 @@ ls
 ## After  cloning the git
 
 ```bash
-ls
 iverilog good_mux.v tb_good_mux.v
 ls
 # To dump the vcd file
