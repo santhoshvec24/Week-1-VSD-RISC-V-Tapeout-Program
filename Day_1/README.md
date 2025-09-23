@@ -98,4 +98,44 @@ endmodule
 
 <img width="1202" height="335" alt="image" src="https://github.com/user-attachments/assets/474e9689-f92b-4234-8a79-444eef05c397" />
 
+### What is .lib
+- Collection of standard logic modules.
+- It consists of all the logic gates with the variation in inputs given to it.
+- It has same gates with different flavors.
+- We need cells that work fast to meet the specific performance and also cells that work slow to meet HOLD.
+---
 
+## Synthesis Lab with Yosys
+
+Let’s synthesize the `good_mux` design!
+
+###  Step-by-Step Yosys Flow
+
+1. **Start Yosys**
+```shell
+yosys
+```
+2. **Read the liberty library**
+```shell
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+3. **Read the Verilog code**
+```shell
+read_verilog good_mux.v
+```
+4.  **Synthesis of the design**
+```shell
+synth -top good_mux
+```
+5.  **Map to Technology File**
+```bash
+dfflibmap -liberty ~/vsd/VLSI/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ~/vsd/VLSI/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+6. **Visualize the Netlist**
+```shell
+show
+```
+7. **
+
+    
