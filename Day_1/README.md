@@ -49,5 +49,7 @@ cd ..
 ls
 ```
 After  cloning the git
+<img width="986" height="849" alt="Screenshot from 2025-09-23 12-13-47" src="https://github.com/user-attachments/assets/e4ffdbff-11d6-4207-ba73-60b710b17b42" />
+
 ```bash
 
