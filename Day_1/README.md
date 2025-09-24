@@ -87,7 +87,7 @@ endmodule
   - If `sel`= 0, `y`=`i0`.
 
 ---
-## Introduction to Yosys
+## **Introduction to Yosys**
  - Yosys is a powerful open-source synthesis tool for digital hardware. 
  - It takes your Verilog code and converts it into a gate-level netlist.
  - The set of primary inputs and outputs of the design code should be same.
@@ -142,14 +142,15 @@ write_verilog good_mux_netlist.v
 ```bash
 stat
 ```
-
-### Synthesis Outputs:
+---
+### **Synthesis Outputs:**
 #### Netlist Dot File:
 <img width="1855" height="918" alt="Screenshot from 2025-09-24 04-18-23" src="https://github.com/user-attachments/assets/cbc5bae9-feb3-4366-a157-940373407f69" />
 
 #### Statistics:
 <img width="765" height="348" alt="Screenshot from 2025-09-24 05-41-34" src="https://github.com/user-attachments/assets/8f390b5c-eb6a-4e82-b1b4-853c2b736a57" />
 
+---
 ### Summary:
 - You learned about testbench, design and stimulator.
 - You analyzed the 2:1 Multiplexer.
