@@ -151,3 +151,8 @@ stat
 
 #### Statistics:
 <img width="765" height="348" alt="Screenshot from 2025-09-24 05-41-34" src="https://github.com/user-attachments/assets/8f390b5c-eb6a-4e82-b1b4-853c2b736a57" />
+
+### Summary:
+- You learned about testbench, design and stimulator.
+- You analyzed the 2:1 Multiplexer.
+- You explored Yosys, iverilog, and GTKWave. 
