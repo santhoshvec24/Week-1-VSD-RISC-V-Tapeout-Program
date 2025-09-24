@@ -136,7 +136,7 @@ show
 ```
 7. **Write the Gate-Level Netlist**
 ```shell
-write_verilog good_mux_netlist.v
+write_verilog /good_mux_netlist.v
 ```
 8. **Generate Report**
 ```bash
