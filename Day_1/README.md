@@ -62,6 +62,10 @@ If you want to change the desgin
 gvim tb_good_mux.v -o good_mux.v
 ```
 ---
+**Waveform**
+
+<img width="1850" height="955" alt="Screenshot from 2025-09-24 12-16-05(1)" src="https://github.com/user-attachments/assets/ca5d48b5-dc4c-4a99-8547-7677ddeec317" />
+
 
 ### Verilog Code Analysis
 
