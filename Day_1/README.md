@@ -61,6 +61,11 @@ If you want to change the desgin
 ```bash
 gvim tb_good_mux.v -o good_mux.v
 ```
+
+Open the waveform in GTKWave
+```bash
+gtkwave tb_good_mux.vcd  
+```
 ---
 **Waveform**
 
