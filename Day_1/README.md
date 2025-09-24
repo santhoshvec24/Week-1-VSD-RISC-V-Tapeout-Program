@@ -140,16 +140,14 @@ show
 ```shell
 write_verilog good_mux_netlist.v
 ```
-8. ****
+8. **Generate Report**
 ```bash
 stat
 ```
 
+### Synthesis Outputs:
+#### Netlist Dot File:
 <img width="1855" height="918" alt="Screenshot from 2025-09-24 04-18-23" src="https://github.com/user-attachments/assets/cbc5bae9-feb3-4366-a157-940373407f69" />
 
-
+#### Statistics:
 <img width="765" height="348" alt="Screenshot from 2025-09-24 05-41-34" src="https://github.com/user-attachments/assets/8f390b5c-eb6a-4e82-b1b4-853c2b736a57" />
-
-   
-
-    
