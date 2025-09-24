@@ -50,7 +50,7 @@ ls
 iverilog good_mux.v tb_good_mux.v
 ls
 # To dump the vcd file
-. /a.out
+./a.out
 ```
 If you want to change the desgin
 ```bash
