@@ -135,8 +135,10 @@ abc -liberty ~/vsd/VLSI/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd_
 show
 ```
 7. **Write the Gate-Level Netlist**
+
+Copy: `good_mux_netlist.v` and paste it in `home`
 ```shell
-write_verilog /good_mux_netlist.v
+write_verilog ~/good_mux_netlist.v
 ```
 8. **Generate Report**
 ```bash
