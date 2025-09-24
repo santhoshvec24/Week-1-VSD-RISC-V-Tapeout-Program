@@ -52,6 +52,8 @@ The delay model LUT is used for the timing analysis.
 
 --- 
 
+#### Understanding the lib file
+
 ### Opening and Exploring the .lib File
 
 To open the sky130_fd_sc_hd__tt_025C_1v80.lib file:
