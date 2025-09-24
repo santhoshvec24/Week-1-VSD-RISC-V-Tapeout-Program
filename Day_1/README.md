@@ -52,6 +52,10 @@ ls
 # To dump the vcd file
 ./a.out
 ```
+To install gvim:
+``` bash
+apt install vim-gtk3 -y
+```
 If you want to change the desgin
 ```bash
 gvim tb_good_mux.v -o good_mux.v
