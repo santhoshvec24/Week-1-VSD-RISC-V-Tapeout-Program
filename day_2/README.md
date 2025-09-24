@@ -30,15 +30,25 @@
 ### SKY130 PDK Overview
 The SKY130 PDK is an open-source Process Design Kit based on SkyWater Technology's 130nm CMOS technology. It provides essential models and libraries for integrated circuit (IC) design, including timing, power, and process variation information.
 
+In `.lib` timing libraries like `sky130_fd_sc_hd__tt_025C_1v80.lib`, the filename itself encodes the PVT (Process, Voltage, Temperature) conditions used to characterize the cells. Understanding this naming convention helps correlate the library to the specific conditions:
+
+- **sky130_fd_sc_hd** – Base library name:  
+  - `sky130` → SkyWater 130nm process  
+  - `fd` → Fully Depleted (process type)  
+  - `sc` → Standard Cells  
+  - `hd` → High Density variant 
+
 #### Decoding tt_025C_1v80 in the SKY130 PDK
 
 `tt`: Typical process corner.
+ - `tt` → Typical-Typical (nominal NMOS and PMOS)
 
 `025C`: Represents a temperature of 25°C, relevant for temperature-dependent performance.
 
 `1v80`: Indicates a core voltage of 1.8V.
 
-This naming convention clarifies which process, voltage, and temperature conditions the library models.
+This systematic naming allows tools to select the appropriate library for synthesis, timing analysis, or corner-based verification.
+The delay model LUT is used for the timing analysis.
 
 --- 
 
