@@ -52,7 +52,19 @@ The delay model LUT is used for the timing analysis.
 
 --- 
 
-#### Understanding the lib file
+### Understanding the lib file
+- Collection of standard logic modules.
+- It consists of all the logic gates with the variation in inputs given to it.
+- It has same gates with different flavors.
+- We need cells that work fast to meet the specific performance and also cells that work slow to meet HOLD.
+
+The `.lib` file contains detailed definitions of each standard cell, including:
+
+- Cell name and type (e.g., AND, OR, DFF)
+- Pin definitions (input, output, clock)
+- Timing information (setup, hold, propagation delays)
+- Power characteristics (dynamic and leakage power)
+- Conditions for PVT corners (process, voltage, temperature)
 
 ### Opening and Exploring the .lib File
 
@@ -63,3 +75,7 @@ To open the sky130_fd_sc_hd__tt_025C_1v80.lib file:
 gedit sky130_fd_sc_hd__tt_025C_1v80.lib
 ```
 <img width="1920" height="922" alt="Screenshot from 2025-09-24 16-49-48" src="https://github.com/user-attachments/assets/894de130-7b8d-4a41-a5a1-b68804fc352c" />
+
+---
+
+## **Hier Synthesis Vs Flat Synthesis**
