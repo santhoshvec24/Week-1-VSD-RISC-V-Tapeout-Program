@@ -31,9 +31,23 @@
 The SKY130 PDK is an open-source Process Design Kit based on SkyWater Technology's 130nm CMOS technology. It provides essential models and libraries for integrated circuit (IC) design, including timing, power, and process variation information.
 
 #### Decoding tt_025C_1v80 in the SKY130 PDK
+
 `tt`: Typical process corner.
+
 `025C`: Represents a temperature of 25°C, relevant for temperature-dependent performance.
+
 `1v80`: Indicates a core voltage of 1.8V.
+
 This naming convention clarifies which process, voltage, and temperature conditions the library models.
 
+--- 
 
+### Opening and Exploring the .lib File
+
+To open the sky130_fd_sc_hd__tt_025C_1v80.lib file:
+
+**Open the file:**
+```shell
+gedit sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+<img width="1920" height="922" alt="Screenshot from 2025-09-24 16-49-48" src="https://github.com/user-attachments/assets/894de130-7b8d-4a41-a5a1-b68804fc352c" />
