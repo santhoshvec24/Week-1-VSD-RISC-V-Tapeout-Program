@@ -51,6 +51,7 @@ iverilog good_mux.v tb_good_mux.v
 ls
 # To dump the vcd file
 ./a.out
+gtkwave tb_good_mux.vcd
 ```
 To install gvim:
 ``` bash
