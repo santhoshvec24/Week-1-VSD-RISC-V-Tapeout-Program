@@ -136,6 +136,11 @@ abc -liberty ~/vsd/VLSI/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd_
 ```shell
 show
 ```
-7. **
+7. **Write the Gate-Level Netlist**
+```shell
+write_verilog good_mux_netlist.v
+```
+
+   
 
     
