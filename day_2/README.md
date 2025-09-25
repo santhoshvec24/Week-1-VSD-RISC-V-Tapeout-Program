@@ -118,7 +118,93 @@ In practice, designers often use a **mixed approach**, keeping critical modules 
 ## Hierarchical Synthesis Workflow
 
 ### Hierarchical synthesis of multiple_modules.v using Yosys:
-1. Open the directory where you would want to run the synthesis
+
+### 1. Open the directory where you would want to run the synthesis
+
+```bash
+cd ~/vcd/photos
+```
+
+### 2. Run hierarchical synthesis in Yosys:
+```bash
+yosys
+```
+
+Inside yosys,
+
+```bash
+read_liberty -lib ~/vsd/VLSI/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog ~/vsd/VLSI/sky130RTLDesignAndSynthesisWorkshop/verilog_files/multiple_modules.v 
+dfflibmap -liberty ~/vsd/VLSI/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib  
+abc -liberty ~/vsd/VLSI/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib  
+synth -top multiple_modules
+show multiple_modules
+show -format png multiple_modules
+write_verilog ~/vsd/VLSI/multiple_modules_hier
+```
+
+<img width="1920" height="922" alt="Screenshot from 2025-09-25 16-09-54" src="https://github.com/user-attachments/assets/d020d8dd-7dd5-42e7-897c-750183e2b6bb" />
+
+<img width="1423" height="637" alt="Screenshot from 2025-09-25 16-10-42" src="https://github.com/user-attachments/assets/e16e34bf-5795-4cd8-8398-39322c2d4ff1" />
+
+
+ ```bash
+Printing statistics.
+
+=== multiple_modules ===
+
+   Number of wires:                  5
+   Number of wire bits:              5
+   Number of public wires:           5
+   Number of public wire bits:       5
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  2
+     sub_module1                     1
+     sub_module2                     1
+
+=== sub_module1 ===
+
+   Number of wires:                  3
+   Number of wire bits:              3
+   Number of public wires:           3
+   Number of public wire bits:       3
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  1
+     $_AND_                          1
+
+=== sub_module2 ===
+
+   Number of wires:                  3
+   Number of wire bits:              3
+   Number of public wires:           3
+   Number of public wire bits:       3
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  1
+     $_OR_                           1
+
+=== design hierarchy ===
+
+   multiple_modules                  1
+     sub_module1                     1
+     sub_module2                     1
+
+   Number of wires:                 11
+   Number of wire bits:             11
+   Number of public wires:          11
+   Number of public wire bits:      11
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  2
+     $_AND_                          1
+     $_OR_                           1
+```
 
 
 
