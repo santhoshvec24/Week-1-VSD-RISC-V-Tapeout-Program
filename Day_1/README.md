@@ -169,7 +169,7 @@ stat
 ---
 ### **Synthesis Outputs:**
 #### Netlist Dot File:
-<img width="1855" height="918" alt="Screenshot from 2025-09-24 04-18-23" src="https://github.com/user-attachments/assets/cbc5bae9-feb3-4366-a157-940373407f69" />
+<img width="612" height="712" alt="Screenshot from 2025-09-25 15-50-17" src="https://github.com/user-attachments/assets/4e791e32-409f-4ec4-9599-c73df69a26ac" />
 
 #### Statistics:
 <img width="883" height="472" alt="Screenshot from 2025-09-25 15-37-13" src="https://github.com/user-attachments/assets/5cacd29c-f6bd-4b11-9d81-12e2a8ba249e" />
