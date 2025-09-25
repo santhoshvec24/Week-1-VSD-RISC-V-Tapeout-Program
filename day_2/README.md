@@ -114,7 +114,8 @@ It maps high-level design into actual logic gates that can be fabricated.
 
 In practice, designers often use a **mixed approach**, keeping critical modules hierarchical while flattening performance-critical paths to achieve a balance between manageability and optimization.
 
-<img width="867" height="604" alt="Screenshot from 2025-09-25 14-16-19" src="https://github.com/user-attachments/assets/2b57d3f7-76e8-4182-89ec-b48a2f8598a5" />
+<img width="919" height="703" alt="image" src="https://github.com/user-attachments/assets/34391c45-e9ae-4fa4-b115-c69d90c554f1" />
+
 
 ## Hierarchical Synthesis Workflow
 
