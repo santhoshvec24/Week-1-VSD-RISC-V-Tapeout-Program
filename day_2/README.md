@@ -79,10 +79,16 @@ vim sky130_fd_sc_hd__tt_025C_1v80.lib
 
 ---
 
-**What is Synthesis**
+### *What is Synthesis*
+
 Synthesis is the process of converting RTL code (Verilog/VHDL) into a gate-level netlist using a standard cell library.
 It maps high-level design into actual logic gates that can be fabricated.
+
 ---
 
 ## **Hier Synthesis Vs Flat Synthesis**
+
+
+<img width="867" height="604" alt="Screenshot from 2025-09-25 14-16-19" src="https://github.com/user-attachments/assets/2b57d3f7-76e8-4182-89ec-b48a2f8598a5" />
+
 
