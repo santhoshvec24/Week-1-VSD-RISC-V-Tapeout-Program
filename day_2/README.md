@@ -316,3 +316,66 @@ write_verilog ~/vcd/photos/multiple_modules_flat.v
 ### Comparsion
 
 <img width="1920" height="922" alt="Screenshot from 2025-09-25 17-38-54" src="https://github.com/user-attachments/assets/5707783c-430c-4d49-86ed-ab738dcc1f5a" />
+
+## Hierarchical vs Flat Synthesis  
+
+| Feature            | Hierarchical Synthesis | Flat Synthesis |
+|--------------------|------------------------|----------------|
+| **Design Style**   | Keeps **modules separate** | Flattens all into one  |
+| **Optimization**   | Limited across modules  | Global across design  |
+| **Area/Performance** | Slightly larger area, slower  | Better area and timing  |
+| **Debugging**      | Easier (preserves structure)  | Harder (no hierarchy)  |
+| **Reuse**          | Modules can be reused easily  | Not reusable (flattened)  |
+| **Use Case 	Verification** | modular design |	Maximum optimization  |
+
+---
+### Sub-module Synthesis
+
+RTL designs are typically modular, consisting of multiple functional blocks or sub-modules. Sub-module level synthesis allows each sub-module to be synthesized independently.
+
+### Why is sub-module level synthesis important?
+
+- **Optimization and Area Reduction** : Synthesizing sub-modules separately allows the tool to optimize each one individually. This leads to more efficient resource usage and which includes logic optimization, technology mapping, and area minimization.
+- **Parallel Processing**: Sub-modules can be synthesized concurrently, which speeds up the synthesis process. For large designs, parallel synthesis can significantly reduce turnaround time.
+
+### Open the directory where you want to run the sub-module synthesis
+
+```bash
+cd ~/vcd/photos
+yosys
+```
+*Inside yosys:*
+
+```bash
+read_liberty -lib ~/vsd/VLSI/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog ~/vsd/VLSI/sky130RTLDesignAndSynthesisWorkshop/verilog_files/multiple_modules.v
+synth -top sub_module1
+abc -liberty ~/vsd/VLSI/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+show -format png
+```
+
+<img width="1920" height="922" alt="Screenshot from 2025-09-25 18-22-48" src="https://github.com/user-attachments/assets/deb74d95-ec35-408b-87e6-2684b6c053ba" />
+
+### Verification of Sub-module Synthesis:
+
+#### Netlist Dot file
+
+<img width="901" height="627" alt="Screenshot from 2025-09-25 18-16-24" src="https://github.com/user-attachments/assets/e4ab6a12-6699-42a4-8dac-8e62901befd1" />
+
+Staistics:
+
+```bash
+=== sub_module1 ===
+
+   Number of wires:                  3
+   Number of wire bits:              3
+   Number of public wires:           3
+   Number of public wire bits:       3
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  1
+     $_AND_                          1
+```
+---
