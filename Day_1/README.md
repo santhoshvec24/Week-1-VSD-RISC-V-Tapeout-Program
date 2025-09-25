@@ -49,7 +49,7 @@ ls
 Use iverilog to compile design and test bench files.
 ```bash
 mkdir -p ~/vcd/photos
-iverilog -o ~/vcd/photos/good_mux_sim.vvp good_mux.v tb_good_mux.v
+
 ```
 ## Run the Simulation
 
