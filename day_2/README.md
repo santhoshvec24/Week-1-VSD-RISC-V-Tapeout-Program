@@ -211,5 +211,34 @@ This approach keeps sub-modules separate, making it easier to debug, reuse, and 
      $_OR_                           1
 ```
 
+## Flat Synthesis Workflow
+
+### Flat synthesis of multiple_modules.v using Yosys:
+
+### 1. Open the directory where you want to run the synthesis
+
+```bash
+cd ~/vcd/photos
+```
+### 2. Run flat synthesis in Yosys:
+
+```bash
+yosys
+```
+Inside yosys, 
+```bash
+read_verilog ~/vsd/VLSI/sky130RTLDesignAndSynthesisWorkshop/verilog_files/multiple_modules.v                         
+synth -top multiple_modules
+abc -liberty ~/vsd/VLSI/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib      
+flatten
+show multiple_modules
+show -format png multiple_modules
+write_verilog ~/vcd/photos/multiple_modules_flat.v
+```
+
+<img width="1920" height="922" alt="Screenshot from 2025-09-25 16-27-33" src="https://github.com/user-attachments/assets/26e59b7a-6476-4e3b-856b-82f47e6dd06f" />
+
+
+<img width="1920" height="922" alt="image" src="https://github.com/user-attachments/assets/15f754c1-0ea8-4884-b9e3-f03cce4bef2d" />
 
 
