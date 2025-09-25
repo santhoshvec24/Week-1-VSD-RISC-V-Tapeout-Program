@@ -1,7 +1,8 @@
 # Day 2: Timing Libraries, Synthesis Approaches, and Efficient Flip-Flop Coding Styles
-- In Day 2, we are going to see the Introduction to timing `.lib`(sky130_fd_sc_hd__tt_025C_1v80.lib) used in open-source PDKs.
-- Comparing hierarchical vs. flat synthesis methods.
-- Exploring efficient coding styles for flip-flops in RTL design.
+
+1. Introduction to timing `.lib`(sky130_fd_sc_hd__tt_025C_1v80.lib) used in open-source PDKs.
+2. Comparing hierarchical vs. flat synthesis methods.
+3. Exploring efficient coding styles for flip-flops in RTL design.
 ---
 
 # Contents
