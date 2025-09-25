@@ -114,4 +114,12 @@ In practice, designers often use a **mixed approach**, keeping critical modules 
 
 <img width="867" height="604" alt="Screenshot from 2025-09-25 14-16-19" src="https://github.com/user-attachments/assets/2b57d3f7-76e8-4182-89ec-b48a2f8598a5" />
 
+---
+
+## Hierarchical Synthesis Workflow
+
+### Hierarchical synthesis of multiple_modules.v using Yosys:
+#### 1. Open the directory where you would want to run the synthesis
+
+
 
