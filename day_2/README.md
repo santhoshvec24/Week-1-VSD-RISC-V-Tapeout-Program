@@ -152,9 +152,9 @@ This approach keeps sub-modules separate, making it easier to debug, reuse, and 
 
 <img width="1423" height="637" alt="Screenshot from 2025-09-25 16-10-42" src="https://github.com/user-attachments/assets/e16e34bf-5795-4cd8-8398-39322c2d4ff1" />
 
+### Statistics
 
  ```bash
-Printing statistics.
 
 === multiple_modules ===
 
