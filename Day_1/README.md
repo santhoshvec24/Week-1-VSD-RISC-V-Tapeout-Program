@@ -46,13 +46,28 @@ ls
 
 ## After  cloning the git
 
+Use iverilog to compile design and test bench files.
 ```bash
-iverilog good_mux.v tb_good_mux.v
-ls
-# To dump the vcd file
-./a.out
+mkdir -p ~/vcd/photos
+iverilog -o ~/vcd/photos/good_mux_sim.vvp good_mux.v tb_good_mux.v
+```
+## Run the Simulation
+
+```bash
+iverilog -o ~/vcd/photos/good_mux_sim.vvp good_mux.v tb_good_mux.v
+vvp good_mux_sim.vvp 
+```
+
+### Open the Waveform using GTKWave
+
+```bash
 gtkwave tb_good_mux.vcd
 ```
+**Waveform**
+
+<img width="1920" height="922" alt="Screenshot from 2025-09-25 15-09-12" src="https://github.com/user-attachments/assets/9f4417a4-1111-4647-b881-0010ad660b60" />
+
+
 To install gvim:
 ``` bash
 apt install vim-gtk3 -y
@@ -61,12 +76,9 @@ If you want to change the desgin
 ```bash
 gvim tb_good_mux.v -o good_mux.v
 ```
+<img width="991" height="609" alt="Screenshot from 2025-09-25 14-43-51" src="https://github.com/user-attachments/assets/1e8bd68d-cc77-46d2-95bf-9da613bfcb00" />
 
 ---
-**Waveform**
-
-<img width="1850" height="955" alt="Screenshot from 2025-09-24 12-16-05(1)" src="https://github.com/user-attachments/assets/ca5d48b5-dc4c-4a99-8547-7677ddeec317" />
-
 
 ### Verilog Code Analysis
 
