@@ -15,7 +15,7 @@
 - [Synthesis](#synthesis)
   - [Hierarchical Synthesis](#hierarchical-synthesis)
   - [Flattened Synthesis](#flattened-synthesis)
-  - [Hierarchical vs. Flattened Synthesis](#hierarchical-vs-flattened-synthesis)
+  - [Hierarchical vs. Flat Synthesis](#hierarchical-vs-flat-synthesis)
 
 - [Flip-Flop Coding Styles](#flip-flop-coding-styles)
   - [Asynchronous Reset D Flip-Flop](#asynchronous-reset-d-flip-flop)
