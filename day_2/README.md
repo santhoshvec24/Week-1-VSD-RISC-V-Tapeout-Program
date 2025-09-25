@@ -210,6 +210,7 @@ This approach keeps sub-modules separate, making it easier to debug, reuse, and 
      $_AND_                          1
      $_OR_                           1
 ```
+---
 
 ## Flat Synthesis Workflow
 
@@ -235,10 +236,23 @@ show multiple_modules
 show -format png multiple_modules
 write_verilog ~/vcd/photos/multiple_modules_flat.v
 ```
+#### Explanation:
+
+`synth -top` generates the gate-level netlist of the flattened design.
+
+`abc` performs technology mapping and logic optimization.
+
+`flatten` removes module hierarchy so the tool can optimize across the entire design.
+
+`write_verilog` outputs the flat netlist ready for further analysis or place-and-route.
+    
+<img width="1920" height="922" alt="image" src="https://github.com/user-attachments/assets/15f754c1-0ea8-4884-b9e3-f03cce4bef2d" />
+
+### Verify the flat synthesis:
+
+#### Netlist Dot File
 
 <img width="1920" height="922" alt="Screenshot from 2025-09-25 16-27-09" src="https://github.com/user-attachments/assets/9aed0468-d3be-44f7-9cbf-7902d1fe8289" />
 
-
-<img width="1920" height="922" alt="image" src="https://github.com/user-attachments/assets/15f754c1-0ea8-4884-b9e3-f03cce4bef2d" />
 
 
