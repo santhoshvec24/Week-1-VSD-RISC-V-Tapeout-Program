@@ -12,19 +12,21 @@
   - [Decoding tt_025C_1v80 in the SKY130 PDK](#decoding-tt_025c_1v80-in-the-sky130-pdk)
   - [Opening and Exploring the .lib File](#opening-and-exploring-the-lib-file)
 
-- [Hierarchical vs. Flattened Synthesis](#hierarchical-vs-flattened-synthesis)
+- [Synthesis](#synthesis)
   - [Hierarchical Synthesis](#hierarchical-synthesis)
   - [Flattened Synthesis](#flattened-synthesis)
-  - [Key Differences](#key-differences)
+  - [Hierarchical vs. Flattened Synthesis](#hierarchical-vs-flattened-synthesis)
 
 - [Flip-Flop Coding Styles](#flip-flop-coding-styles)
   - [Asynchronous Reset D Flip-Flop](#asynchronous-reset-d-flip-flop)
   - [Asynchronous Set D Flip-Flop](#asynchronous-set-d-flip-flop)
   - [Synchronous Reset D Flip-Flop](#synchronous-reset-d-flip-flop)
+  - [Synchronous Set D Flip-Flop](#synchronous-set-d-flip-flop)
 
 - [Simulation and Synthesis Workflow](#simulation-and-synthesis-workflow)
   - [Icarus Verilog Simulation](#icarus-verilog-simulation)
   - [Synthesis with Yosys](#synthesis-with-yosys)
+- [Summary](#summary)
 
 ---
 **Timing Libraries:**
