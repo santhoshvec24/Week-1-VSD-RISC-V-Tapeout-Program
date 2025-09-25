@@ -254,5 +254,62 @@ write_verilog ~/vcd/photos/multiple_modules_flat.v
 
 <img width="1920" height="922" alt="Screenshot from 2025-09-25 16-27-09" src="https://github.com/user-attachments/assets/9aed0468-d3be-44f7-9cbf-7902d1fe8289" />
 
+### Statistics
 
+```bash
+
+=== multiple_modules ===
+
+   Number of wires:                  5
+   Number of wire bits:              5
+   Number of public wires:           5
+   Number of public wire bits:       5
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  2
+     sub_module1                     1
+     sub_module2                     1
+
+=== sub_module1 ===
+
+   Number of wires:                  3
+   Number of wire bits:              3
+   Number of public wires:           3
+   Number of public wire bits:       3
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  1
+     $_AND_                          1
+
+=== sub_module2 ===
+
+   Number of wires:                  3
+   Number of wire bits:              3
+   Number of public wires:           3
+   Number of public wire bits:       3
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  1
+     $_OR_                           1
+
+=== design hierarchy ===
+
+   multiple_modules                  1
+     sub_module1                     1
+     sub_module2                     1
+
+   Number of wires:                 11
+   Number of wire bits:             11
+   Number of public wires:          11
+   Number of public wire bits:      11
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  2
+     $_AND_                          1
+     $_OR_                           1
+```
 
