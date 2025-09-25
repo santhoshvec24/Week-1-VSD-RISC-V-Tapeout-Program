@@ -72,7 +72,7 @@ To open the sky130_fd_sc_hd__tt_025C_1v80.lib file:
 
 **Open the file:**
 ```shell
-gedit sky130_fd_sc_hd__tt_025C_1v80.lib
+vim sky130_fd_sc_hd__tt_025C_1v80.lib
 ```
 <img width="1920" height="922" alt="Screenshot from 2025-09-24 16-49-48" src="https://github.com/user-attachments/assets/894de130-7b8d-4a41-a5a1-b68804fc352c" />
 
