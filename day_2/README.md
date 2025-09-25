@@ -313,3 +313,6 @@ write_verilog ~/vcd/photos/multiple_modules_flat.v
      $_OR_                           1
 ```
 
+### Comparsion
+
+<img width="1920" height="922" alt="Screenshot from 2025-09-25 17-38-54" src="https://github.com/user-attachments/assets/5707783c-430c-4d49-86ed-ab738dcc1f5a" />
