@@ -172,7 +172,9 @@ stat
 <img width="1855" height="918" alt="Screenshot from 2025-09-24 04-18-23" src="https://github.com/user-attachments/assets/cbc5bae9-feb3-4366-a157-940373407f69" />
 
 #### Statistics:
-<img width="765" height="348" alt="Screenshot from 2025-09-24 05-41-34" src="https://github.com/user-attachments/assets/8f390b5c-eb6a-4e82-b1b4-853c2b736a57" />
+<img width="883" height="472" alt="Screenshot from 2025-09-25 15-37-13" src="https://github.com/user-attachments/assets/5cacd29c-f6bd-4b11-9d81-12e2a8ba249e" />
+
+
 
 ---
 ### Summary:
