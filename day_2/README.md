@@ -24,8 +24,8 @@
   - [Synchronous Set D Flip-Flop](#synchronous-set-d-flip-flop)
 
 - [Simulation and Synthesis Workflow](#simulation-and-synthesis-workflow)
-  - [Icarus Verilog Simulation](#icarus-verilog-simulation)
-  - [Synthesis with Yosys](#synthesis-with-yosys)
+  - [Simulation](#simulation)
+  - [Synthesis](#synthesis)
 - [Summary](#summary)
 
 ---
