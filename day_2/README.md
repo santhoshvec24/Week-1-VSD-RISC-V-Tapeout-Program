@@ -88,6 +88,29 @@ It maps high-level design into actual logic gates that can be fabricated.
 
 ## **Hier Synthesis Vs Flat Synthesis**
 
+Synthesis is the process of converting RTL code into a gate-level netlist using standard cells from the library. 
+There are two approaches: **hierarchical synthesis** and **flat synthesis**.
+
+### Hierarchical Synthesis
+- The design is synthesized module by module, preserving the hierarchy of the RTL.  
+- **Advantages:**
+  - Easier to debug and manage large designs.
+  - Reusable modules can be synthesized separately.
+  - Reduces runtime and memory usage for very large designs.
+- **Disadvantages:**
+  - May miss some cross-module optimizations.
+  - Overall area or timing may be slightly less optimal compared to flat synthesis.
+
+### Flat Synthesis
+- The entire design is synthesized as a **single flattened block**, ignoring module boundaries.  
+- **Advantages:**
+  - Allows the synthesis tool to optimize across module boundaries.
+  - Can achieve better area, timing, and power optimization.
+- **Disadvantages:**
+  - Requires more memory and runtime for large designs.
+  - Harder to debug or modify specific parts of the design.
+
+In practice, designers often use a **mixed approach**, keeping critical modules hierarchical while flattening performance-critical paths to achieve a balance between manageability and optimization.
 
 <img width="867" height="604" alt="Screenshot from 2025-09-25 14-16-19" src="https://github.com/user-attachments/assets/2b57d3f7-76e8-4182-89ec-b48a2f8598a5" />
 
