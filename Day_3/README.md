@@ -378,7 +378,7 @@ show
 <img width="832" height="507" alt="Screenshot from 2025-09-26 19-46-41" src="https://github.com/user-attachments/assets/a9745b8a-856e-4a7f-9c78-e84aace0ba83" />
 
 ---
-Lab 6
+### Lab 6
 To see the logic of the verilog file
 ```bash
 
