@@ -21,6 +21,92 @@ Welcome to Day 3 of this workshop! Today we discuss optimization of combinationa
 
 - #### Constant Propagation:
    - Replaces logic blocks with constants when input values are fixed.
+   - - **Example:**
+    ```
+    Y = ((A·B) + C)' 
+    If A = 0 → Y = (0 + C)' = C'
+    ```
+  - **Result:**
+   - Complex gate logic (6 MOS transistors) simplifies to a single inverter (2 MOS transistors).
 - #### Boolean Logic Optimization:
-   - Simplify Boolean expressions using: Karnaugh Map (K-Map) and Quine McCluskey Method
+   - Simplify Boolean expressions using: Karnaugh Map (K-Map) and Quine McCluskey Method.
+   - **Example Verilog:**
+    ```verilog
+    assign y = a ? (b ? c : (c ? a : 0)) : (!c);
+    ```
+    
+    - Optimized expression:  
+      ```
+      y = a ⊕ c
+      ```
+      
+### Yosys Optimization Commands:
+  
+  - The command to perform logic optimization in Yosys is opt_clean.
+    ```
+       opt_clean
+    ```
+  - Additionally, for a hierarchical design involving multiple sub-modules, the design must be flattened by running the flatten command before executing the opt_clean command.
+     ```
+        flatten
+     ```
 
+    ```
+    synth -top <module_name>
+    opt_clean -purge
+    ```
+
+---
+
+## Constant Propagation  
+### 1. What is it?  
+- Replace signals driven by **constant values (0 or 1)** with fixed logic.  
+- Eliminates unnecessary gates and wires.  
+
+### 2. Detailed Info  
+Constant propagation checks if a net or signal always evaluates to a fixed value and simplifies the circuit accordingly. For example, if a gate input is always `0`, the output can be optimized to `0` without the actual logic.  
+
+### Advantages  
+- Reduces **gate count**  
+- Simplifies **logic equations**  
+- Improves **area and power efficiency**  
+
+---
+
+## State Optimization  
+### 1. What is it?  
+- Reduces the number of **states in a finite state machine (FSM)** by merging equivalent or unreachable states.  
+
+### 2. Detailed Info  
+In FSMs, some states may be redundant (behaving the same as others) or unreachable. State optimization identifies and removes them, leading to a minimal FSM.  
+
+###  Advantages  
+- Reduces **flip-flop count**  
+- Improves **timing** (fewer state transitions)  
+- Lower **area and power** usage  
+
+---
+
+## Cloning  
+### 1. What is it?  
+- Duplicate logic or registers to **reduce fanout** and **improve timing**.  
+
+### 2. Detailed Info  
+If a single gate or flip-flop drives many loads, the delay increases. Cloning creates a copy of that logic/register so loads are split between them.  
+
+###  Advantages  
+- Reduces **net delay** from high fanout  
+- Improves **timing closure**  
+- Helps achieve **higher operating frequency**
+
+## Retiming  
+### 1. What is it?  
+- **Reposition registers (flip-flops)** in a circuit without changing functionality.  
+
+### 2. Detailed Info  
+Retiming balances combinational delays by moving flip-flops across logic gates. It helps meet setup/hold timing while preserving overall input-output behavior.  
+
+###  Advantages  
+- Optimizes **critical path delay**  
+- Enables **higher clock frequency**  
+- Balances **pipeline stages** for better performance  
