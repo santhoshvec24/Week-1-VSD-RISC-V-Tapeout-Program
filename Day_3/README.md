@@ -20,7 +20,7 @@ Welcome to Day 3 of this workshop! Today we discuss optimization of combinationa
 ### Techniques:
 
 - #### Constant Propagation:
- - Replaces logic blocks with constants when input values are fixed.
+   - Replaces logic blocks with constants when input values are fixed.
 - #### Boolean Logic Optimization:
- - Simplify Boolean expressions using: Karnaugh Map (K-Map) and Quine McCluskey Method
+   - Simplify Boolean expressions using: Karnaugh Map (K-Map) and Quine McCluskey Method
 
