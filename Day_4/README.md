@@ -16,9 +16,10 @@ Welcome to Day 4 of the RTL Workshop!
 
 [2. Synthesis-Simulation Mismatch](#2-synthesis-simulation-mismatch)
 [3. Blocking vs. Non-Blocking Assignments in Verilog](#3-blocking-vs-non-blocking-assignments-in-verilog)
-   - [Blocking Statements](#blocking-statements)
-   - [ Non-Blocking Statements](#non-blocking-statements)
-
+   - Blocking Statements
+   - Non-Blocking Statements
+[4. Labs](#4-labs)
+[5. Summary](#5-summary)
 
 
 
