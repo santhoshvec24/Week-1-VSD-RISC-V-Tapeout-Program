@@ -161,7 +161,8 @@ cd ~/vsd/VLSI/sky130RTLDesignAndSynthesisWorkshop/verilog_files
  ls *dff*
 ```
 ---
-## Combinational Logic Optimization-labs
+
+# Combinational Logic Optimization-labs
 
 ### Lab 1 :
 
@@ -317,7 +318,8 @@ show
      $_NAND_                         1
 ```
 ---
-## Sequential-Logic-Optimization-labs
+
+# Sequential-Logic-Optimization-labs
 
 ### Lab 4
 To see the logic of verilog code for lab 4.
