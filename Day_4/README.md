@@ -11,8 +11,13 @@ Welcome to Day 4 of the RTL Workshop!
 
 [1. Gate Level Simulation (GLS)](#1-gate-level-simulation-gls)
    - GLS Workflow in iverilog.
-   - 
+   - Why and When to perform GLS
+   - Challenges
 
+[2. Synthesis-Simulation Mismatch](#2-synthesis-simulation-mismatch)
+[3. Blocking vs. Non-Blocking Assignments in Verilog](#3-blocking-vs-non-blocking-assignments-in-verilog)
+   - [Blocking Statements](#blocking-statements)
+   - [ Non-Blocking Statements](#non-blocking-statements)
 
 
 
@@ -85,10 +90,10 @@ Welcome to Day 4 of the RTL Workshop!
           - **Execution:** Scheduled, executes concurrently at the end of the time step.
           - **Suitable for:** Sequential logic (e.g., `always @(posedge clk)`).
           - **Example:**  
-             ```verilog
-               always @(posedge clk)
-                    q <= d;
-             ```
+          ```verilog
+            always @(posedge clk)
+            q <= d;
+          ```
 
 ---
 ## Labs
