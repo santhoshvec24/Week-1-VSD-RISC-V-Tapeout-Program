@@ -8,8 +8,8 @@ Welcome to Day 3 of this workshop! Today we discuss optimization of combinationa
 
 - [Combinational Logic Optimization](#Combinational-Logic-Optimization)
 - [Sequential Logic Optimization](#Sequential-Logic-Optimization)
-- [Combinational Logic Optimization-labs](#Combinational-Logic-Optimization-examples)
-- [Sequential-Logic-Optimization-labs](#Sequential-Logic-Optimization-examples)
+- [Combinational Logic Optimization labs](#Combinational-Logic-Optimization-examples)
+- [Sequential Logic Optimization labs](#Sequential-Logic-Optimization-examples)
 ---
 
 ## Combinational Logic Optimization
@@ -162,7 +162,7 @@ cd ~/vsd/VLSI/sky130RTLDesignAndSynthesisWorkshop/verilog_files
 ```
 ---
 
-# Combinational Logic Optimization-labs
+# Combinational Logic Optimization labs
 
 ### Lab 1 :
 
@@ -319,7 +319,7 @@ show
 ```
 ---
 
-# Sequential-Logic-Optimization-labs
+# Sequential Logic Optimization labs
 
 ### Lab 4
 To see the logic of verilog code for lab 4.
