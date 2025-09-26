@@ -338,7 +338,6 @@ yosys
 ```
 then, Inside yosys
 ```bash
-yosys
 read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 read_verilog dff_const1.v
 synth -top dff_const1
@@ -346,3 +345,82 @@ dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 show
 ```
+### Netlist Dot File
+
+<img width="1033" height="581" alt="Screenshot from 2025-09-26 19-24-52" src="https://github.com/user-attachments/assets/7ff4cfbf-2b98-4b02-8f50-5e2f874c321f" />
+
+---
+## Lab 5
+To see the logiv verilog file, run this
+```bash
+gvim dff_const2.v
+```
+<img width="1159" height="534" alt="Screenshot from 2025-09-26 19-29-52" src="https://github.com/user-attachments/assets/600422ea-d0cf-4a57-bd6f-cb40ec1fa1ac" />
+
+### Code logic
+- In all positive edge of reset and clock, the output q will high always.
+- q=1
+Enter into the yosys
+```bash
+yosys
+```
+Inside the yosys, run
+```bash
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog dff_const2.v
+synth -top dff_const2
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+
+#### Netlist Dot File
+<img width="832" height="507" alt="Screenshot from 2025-09-26 19-46-41" src="https://github.com/user-attachments/assets/a9745b8a-856e-4a7f-9c78-e84aace0ba83" />
+
+---
+Lab 6
+To see the logic of the verilog file
+```bash
+
+```
+<img width="1318" height="735" alt="Screenshot from 2025-09-26 19-59-23" src="https://github.com/user-attachments/assets/db0b8f77-500f-44d4-ae7c-1a19dba2b973" />
+
+Entering into the yosys
+```bash
+yosys
+```
+
+Inside yosys
+```bash
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog dff_const3.v
+synth -top dff_const3
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+
+<img width="1210" height="670" alt="Screenshot from 2025-09-26 20-03-05" src="https://github.com/user-attachments/assets/ab04ebe6-aa5f-4f0d-a240-027057b85b7a" />
+
+---
+## Summary
+### Combinational Optimization Techniques:
+  - Constant Propagation: Replaces logic with constants → fewer gates, less power.
+  - Boolean Logic Optimization: Uses K-Map / Quine-McCluskey to simplify expressions.
+   
+### Sequential Optimization Techniques:
+    - State Optimization: Minimizes FSM states → reduces flip-flops and transitions.
+    - Retiming: Moves registers to balance delay → improves timing.
+    - Cloning: Duplicates logic/registers to reduce fanout → helps timing closure.
+
+### Yosys Commands Used:
+   - flatten → Converts hierarchical design into flat design.
+   - opt_clean -purge → Removes unused nets and redundant logic.
+   - dfflibmap / abc → Map logic to technology libraries for synthesis.
+
+### Lab Outcomes:
+   - Optimized designs show reduced transistor count, logic levels, and area.
+   - Some flip-flops collapsed into constants → saving resources.
+   -  Visualized dot files confirm simplifications in synthesized netlists.
+
+By applying these optimizations, designs become smaller, faster, and more power-efficient, ready for real-world VLSI implementation.
