@@ -18,7 +18,9 @@ Welcome to Day 4 of the RTL Workshop!
 [3. Blocking vs. Non-Blocking Assignments in Verilog](#3-blocking-vs-non-blocking-assignments-in-verilog)
    - Blocking Statements
    - Non-Blocking Statements
+
 [4. Labs](#4-labs)
+
 [5. Summary](#5-summary)
 
 
