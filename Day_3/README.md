@@ -43,17 +43,17 @@ Welcome to Day 3 of this workshop! Today we discuss optimization of combinationa
 ### Yosys Optimization Commands:
   
   - The command to perform logic optimization in Yosys is opt_clean.
-    ```
+    ```bash
        opt_clean
     ```
   - Additionally, for a hierarchical design involving multiple sub-modules, the design must be flattened by running the flatten command before executing the opt_clean command.
-     ```
+     ```bash
         flatten
      ```
-
-    ```
-    synth -top <module_name>
-    opt_clean -purge
+     then,
+    ```bash
+        synth -top <module_name>
+        opt_clean -purge
     ```
 
 ---
@@ -109,4 +109,41 @@ Retiming balances combinational delays by moving flip-flops across logic gates. 
 ###  Advantages  
 - Optimizes **critical path delay**  
 - Enables **higher clock frequency**  
-- Balances **pipeline stages** for better performance  
+- Balances **pipeline stages** for better performance
+
+---
+## Sequential Logic Optimization
+
+#### Basic:
+- **Sequential Constant Propagation**  
+  - Propagates known constant values through flip-flops during synthesis.
+
+### Basic Techniques:
+
+#### 1.Sequential Constant Propagation:
+
+- Propagates known constant values through flip-flops during synthesis.
+
+ **Advanced Techniques:**
+ 
+ #### 1. State Optimization
+
+- Reduces the number of FSM states → optimizing area and transitions.
+
+ #### 2. Retiming
+
+Moves registers across logic boundaries to balance delay and improve timing.
+
+ #### 3. Sequential Logic Cloning
+
+- Duplicates logic in floorplan-aware synthesis to meet timing and congestion goals.
+
+### Outcome:
+- These optimization techniques ensure faster, smaller, and power-efficient circuits, ready for real-world chip design.
+
+---
+### **To get start through the optimization of design logic**
+
+**Go through the step by step worflow**
+
+
