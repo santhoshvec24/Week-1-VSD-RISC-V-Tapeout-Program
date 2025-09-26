@@ -12,3 +12,15 @@ Welcome to Day 3 of this workshop! Today we discuss optimization of combinationa
 - [Sequential-Logic-Optimization-labs](#Sequential-Logic-Optimization-examples)
 ---
 
+## Combinational Logic Optimization
+
+### Objective:
+- Squeeze and simplify logic to get the most optimized design in terms of area and power.
+
+### Techniques:
+
+- #### Constant Propagation:
+ - Replaces logic blocks with constants when input values are fixed.
+- #### Boolean Logic Optimization:
+ - Simplify Boolean expressions using: Karnaugh Map (K-Map) and Quine McCluskey Method
+
