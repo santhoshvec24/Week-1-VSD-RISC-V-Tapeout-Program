@@ -8,8 +8,8 @@ Welcome to Day 3 of this workshop! Today we discuss optimization of combinationa
 
 - [Combinational Logic Optimization](#Combinational-Logic-Optimization)
 - [Sequential Logic Optimization](#Sequential-Logic-Optimization)
-- [Combinational Logic Optimization labs](#Combinational-Logic-Optimization-examples)
-- [Sequential Logic Optimization labs](#Sequential-Logic-Optimization-examples)
+- [Combinational Logic Optimization labs](#Combinational-Logic-Optimization-labs)
+- [Sequential Logic Optimization labs](#Sequential-Logic-Optimization-labs)
 ---
 
 ## Combinational Logic Optimization
