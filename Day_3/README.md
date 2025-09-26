@@ -146,4 +146,31 @@ Moves registers across logic boundaries to balance delay and improve timing.
 
 **Go through the step by step worflow**
 
+#### 1. locate the file in your project directory. 
+
+This is done using,
+```bash
+cd ~/vsd/VLSI/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+```
+#### 2. **list the optimization designs**
+Run :
+ ```bash
+ ls *opt*
+```
+
+#### 3. **list the sequential optimization designs**
+Run :
+ ```bash
+ ls *dff*
+```
+
+## Lab 1 :
+
+to see the verilog logic of Lab1.
+Run:
+```
+gedit opt_check.v
+```
+
+<img width="923" height="697" alt="Screenshot from 2025-09-26 13-40-57" src="https://github.com/user-attachments/assets/f7411013-2856-4703-a3aa-6ad796e3c587" />
 
