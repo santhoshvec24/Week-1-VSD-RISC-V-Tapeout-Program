@@ -146,31 +146,203 @@ Moves registers across logic boundaries to balance delay and improve timing.
 
 **Go through the step by step worflow**
 
-#### 1. locate the file in your project directory. 
+#### Locate the file in your project directory. 
 
-This is done using,
 ```bash
 cd ~/vsd/VLSI/sky130RTLDesignAndSynthesisWorkshop/verilog_files
 ```
-#### 2. **list the optimization designs**
-Run :
+#### List the optimization designs
  ```bash
  ls *opt*
 ```
 
-#### 3. **list the sequential optimization designs**
-Run :
+#### list the sequential optimization designs
  ```bash
  ls *dff*
 ```
+---
+## Combinational Logic Optimization-labs
 
-## Lab 1 :
+### Lab 1 :
 
-to see the verilog logic of Lab1.
-Run:
-```
+To see the verilog logic of Lab1.
+```bash
 gedit opt_check.v
 ```
 
 <img width="923" height="697" alt="Screenshot from 2025-09-26 13-40-57" src="https://github.com/user-attachments/assets/f7411013-2856-4703-a3aa-6ad796e3c587" />
 
+#### Explanation:
+
+- assign y = a ? b : 0; means:
+- If a is true, y is assigned the value of b.
+- If a is false, y is 0.
+
+#### Lanch yosys:
+```bash
+yosys
+```
+
+#### 6. **Run this command inside yosys:**
+```bash
+read_liberty -lib ~/vsd/VLSI/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog opt_check.v
+synth -top opt_check
+opt_clean -purge
+abc -liberty ~/vsd/VLSI/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+
+<img width="895" height="638" alt="Screenshot from 2025-09-26 14-22-21" src="https://github.com/user-attachments/assets/5812f893-d2c8-4442-919e-c6974453210c" />
+
+#### Netlist Dot File
+
+<img width="866" height="584" alt="Screenshot from 2025-09-26 14-17-41" src="https://github.com/user-attachments/assets/2d50aea5-b42b-4872-bbb2-f670de1e7e0d" />
+
+### Statistics
+```bash
+=== opt_check ===
+
+   Number of wires:                  3
+   Number of wire bits:              3
+   Number of public wires:           3
+   Number of public wire bits:       3
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  1
+     $_AND_                          1
+```
+then, exit from yosys
+```bash
+exit
+```
+
+---
+### Lab 2:
+To see the verilog logic of Lab 2.
+```bash
+gedit opt_check2.v
+```
+
+<img width="931" height="394" alt="Screenshot from 2025-09-26 14-30-08" src="https://github.com/user-attachments/assets/20cefffb-aff4-4039-a930-f4ece063d85f" />
+
+#### Code analysis:
+1. if a is true then the output is 1.
+2. else 0.
+
+#### launch yosys:
+```bash
+yosys
+```
+Inside yosys:
+```bash
+read_liberty -lib ~/vsd/VLSI/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog opt_check2.v
+synth -top opt_check2
+opt_clean -purge
+abc -liberty ~/vsd/VLSI/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+
+<img width="1920" height="922" alt="Screenshot from 2025-09-26 14-41-13" src="https://github.com/user-attachments/assets/b5b0f210-106c-44de-b406-354e4417488c" />
+
+
+#### Netlist Dot File 
+<img width="791" height="533" alt="Screenshot from 2025-09-26 14-40-56" src="https://github.com/user-attachments/assets/cf8de016-7682-457a-9a4c-3505d0895a80" />
+
+#### Statistics
+```bash
+=== opt_check2 ===
+
+   Number of wires:                  3
+   Number of wire bits:              3
+   Number of public wires:           3
+   Number of public wire bits:       3
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  1
+     $_OR_                           1
+```
+then, exit from yosys
+```bash
+exit
+```
+
+---
+### Lab 3
+To see the verilog logic of Lab3.
+```bash
+gedit opt_check3.v
+```
+
+<img width="918" height="505" alt="Screenshot from 2025-09-26 15-07-07" src="https://github.com/user-attachments/assets/66f66c49-3d2e-41d6-a7c7-e994a0b5e7a3" />
+
+#### Code explanation
+- if c is true, then the output is b, else 0.
+- if c is b then the value of y be b or 0 depends on the value of a.
+
+Enter inside the yosys by the command:
+```bash
+yosys
+```
+Inside yosys
+```bash
+read_liberty -lib ~/vsd/VLSI/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog opt_check3.v
+synth -top opt_check3
+opt_clean -purge
+abc -liberty ~/vsd/VLSI/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+<img width="1920" height="922" alt="Screenshot from 2025-09-26 15-47-49" src="https://github.com/user-attachments/assets/1ff6146b-fa38-4720-a589-1dffd73f6ccd" />
+
+### Netlist Dot File
+<img width="823" height="478" alt="Screenshot from 2025-09-26 15-42-29" src="https://github.com/user-attachments/assets/a0a25c1a-987a-4352-ac4e-cd4694f45b40" />
+
+#### Statistics:
+```bash
+=== opt_check3 ===
+
+   Number of wires:                  5
+   Number of wire bits:              5
+   Number of public wires:           4
+   Number of public wire bits:       4
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  2
+     $_ANDNOT_                       1
+     $_NAND_                         1
+```
+---
+## Sequential-Logic-Optimization-labs
+
+### Lab 4
+To see the logic of verilog code for lab 4.
+```bash
+gedit dff_const1.v
+```
+
+<img width="927" height="586" alt="Screenshot from 2025-09-26 15-56-33" src="https://github.com/user-attachments/assets/12ad6b57-b89f-444e-bd47-4f739feff7af" />
+
+#### Code Analysis
+- At positive edge of the clock:
+  - if reset is high, then the value of q is 0.
+  - if reset is low, then the value of q is 1.
+
+To go inside the yosys, run
+```bash
+yosys
+```
+then, Inside yosys
+```bash
+yosys
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog dff_const1.v
+synth -top dff_const1
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
