@@ -34,7 +34,7 @@ Welcome to Day 5 of the RTL workshop! Today, we will cover optimization in Veril
 - **If-else statements** are used for conditional execution in behavioral modeling, typically within procedural blocks (`always`, `initial`, tasks, or functions).
 - Mostly used for priority logic.
 
-### Inferred Latches:
+### 2. Inferred Latches:
 - Inferred Latches in `if` is due to the incomplete `if` statement.
 - Due to incomplete `if` statement, the incomplete condition will get latched with either of inputs and with the output.
 - Until it is intented to do the incomplete `if-else` statements.
