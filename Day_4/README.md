@@ -185,7 +185,7 @@ show
 
 ---
 ## GLS of Ternary Operator MUX
-Gate-Level Simulation is performed using the synthesized netlist (ternary_operator_mux_net.v). This helps verify the functional correctness of the design after synthesis, using the actual standard cells and any delays (if modeled)
+Gate-Level Simulation is performed using the synthesized netlist (bad_mux_net.v). This helps verify the functional correctness of the design after synthesis, using the actual standard cells and any delays (if modeled)
 
 ```bash
 iverilog -o ~/vsd/a.out ../my_lib/verilog_model/primitives.v  ../my_lib/verilog_model/sky130_fd_sc_hd.v bad_mux_net.v tb_bad_mux.v
@@ -233,8 +233,8 @@ show
 <img width="766" height="538" alt="Screenshot from 2025-09-27 10-54-38" src="https://github.com/user-attachments/assets/12c6040f-a16f-476a-a1a8-dc84ffa3e500" />
 
 ---
-## GLS of Ternary Operator MUX
-Gate-Level Simulation is performed using the synthesized netlist (ternary_operator_mux_net.v). This helps verify the functional correctness of the design after synthesis, using the actual standard cells and any delays (if modeled)
+## GLS of Blocking Caveat Mux
+Gate-Level Simulation is performed using the synthesized netlist (blocking_caveat_mux_net.v). This helps verify the functional correctness of the design after synthesis, using the actual standard cells and any delays (if modeled)
 
 ```bash
 iverilog -o ~/vsd/a.out ../my_lib/verilog_model/primitives.v  ../my_lib/verilog_model/sky130_fd_sc_hd.v blocking_caveat_net.v tb_blocking_caveat.v
