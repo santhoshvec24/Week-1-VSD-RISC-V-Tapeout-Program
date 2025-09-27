@@ -97,20 +97,20 @@ Welcome to Day 4 of the RTL Workshop!
             always @(posedge clk)
             q <= d;
           ```
-
 ---
+
 ## Labs
 
 ### Lab 1
 
 ```bash
-iverilog -o ~/vcd/photos/ternary_operator_mux_sim.vvp  ternary_operator_mux.v tb_ternary_operator_mux.v
+iverilog -o ~/vcd/a.out ternary_operator_mux.v tb_ternary_operator_mux.v
 ```
 then,
 ```bash
-cd ~/vcd/photos
-vvp ternary_operator_mux_sim.vvp 
-gtkwave tb_gtkwave tb_ternary_operator_mux.vcd
+cd ~/vcd
+./a.out
+gtkwave tb_ternary_operator_mux.vcd
 ```
 <img width="995" height="704" alt="Screenshot from 2025-09-27 05-35-15" src="https://github.com/user-attachments/assets/6c7a718d-d675-453a-9f01-7ec33e02cab5" />
 
@@ -127,11 +127,10 @@ yosys
 ```
 Inside yosys, run
 ```bash
-read_liberty -lib ~/vsd/VLSI/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 read_verilog ternary_operator_mux.v
 synth -top  ternary_operator_mux
-opt_clean -purge
-abc -liberty ~/vsd/VLSI/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 show
 ```
 <img width="788" height="581" alt="Screenshot from 2025-09-27 05-59-34" src="https://github.com/user-attachments/assets/44f99ec0-a71e-4e51-88f6-51f4cabf3434" />
@@ -141,33 +140,33 @@ show
 Gate-Level Simulation is performed using the synthesized netlist (ternary_operator_mux_net.v). This helps verify the functional correctness of the design after synthesis, using the actual standard cells and any delays (if modeled)
 
 ```bash
-iverilog -o ~/vsd/a.out ~/vsd/VLSI/sky130RTLDesignAndSynthesisWorkshop/my_lib/verilog_model/primitives.v ~/vsd/VLSI/sky130RTLDesignAndSynthesisWorkshop/my_lib/verilog_model/sky130_fd_sc_hd.v ternary_operator_mux.v tb_ternary_operator_mux.v
+iverilog -o ~/vsd/a.out ../my_lib/verilog_model/primitives.v  ../my_lib/verilog_model/sky130_fd_sc_hd.v ternary_operator_mux_net.v tb_ternary_operator_mux.v
+cd ~vsd
+./a.out
 gtkwave tb_ternary_operator_mux.vcd
 ```
-<img width="999" height="726" alt="Screenshot from 2025-09-27 07-13-54" src="https://github.com/user-attachments/assets/683212d5-2fde-4b36-aa88-14107362b330" />
+<img width="994" height="706" alt="Screenshot from 2025-09-27 10-04-53" src="https://github.com/user-attachments/assets/7e567477-14d7-412b-8dc5-4cc3d1788fc1" />
+
+---
 
 ## Lab 2
 
 ```bash
-iverilog -o ~/vsd/a.out bad_mux.v tb_bad_mux.v
-```
-enter into the stored a.out file by running
-```bash
-cd ~/vsd
+iverilog -o ~/vcd/a.out bad_mux.v tb_bad_mux.v
 ```
 then,
 ```bash
+cd ~/vcd
 ./a.out
 gtkwave tb_bad_mux.vcd
 ```
-
-<img width="1002" height="707" alt="Screenshot from 2025-09-27 07-44-50" src="https://github.com/user-attachments/assets/1a67c768-a841-4815-8a3e-3e697ce57172" />
+<img width="994" height="706" alt="Screenshot from 2025-09-27 10-24-36" src="https://github.com/user-attachments/assets/4b3b8975-d08a-4f8b-a806-f003cbb56535" />
 
 To view the verilog file 
 ```bash
 gedit bad_mux.v
 ```
-<img width="827" height="584" alt="image" src="https://github.com/user-attachments/assets/9ba95bc3-e932-45da-a3ab-96a91315d1ff" />
+<img width="822" height="509" alt="Screenshot from 2025-09-27 10-27-14" src="https://github.com/user-attachments/assets/11d40bff-c868-46a8-b891-2b8900a99969" />
 
 #### Enter into the yosys by running it in the verilog_files directory:
 ```bash
@@ -176,20 +175,79 @@ yosys
 ```
 Inside yosys, run
 ```bash
-read_liberty -lib ~/vsd/VLSI/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 read_verilog bad_mux.v
-synth -top bad_mux
-opt_clean -purge
-abc -liberty ~/vsd/VLSI/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+synth -top  bad_mux
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 show
 ```
-<img width="792" height="584" alt="Screenshot from 2025-09-27 08-03-49" src="https://github.com/user-attachments/assets/86c124e2-91ca-40e1-9510-0d4a1cbd4ba1" />
+<img width="749" height="460" alt="Screenshot from 2025-09-27 10-28-47" src="https://github.com/user-attachments/assets/22e030e6-7ef7-4a45-baed-8be33dcfe6fd" />
 
 ---
 ## GLS of Ternary Operator MUX
-Gate-Level Simulation is performed using the synthesized netlist (bad_mux_net.v). This helps verify the functional correctness of the design after synthesis, using the actual standard cells and any delays (if modeled)
+Gate-Level Simulation is performed using the synthesized netlist (ternary_operator_mux_net.v). This helps verify the functional correctness of the design after synthesis, using the actual standard cells and any delays (if modeled)
 
 ```bash
-iverilog -o ~/vsd/a.out ~/vsd/VLSI/sky130RTLDesignAndSynthesisWorkshop/my_lib/verilog_model/primitives.v ~/vsd/VLSI/sky130RTLDesignAndSynthesisWorkshop/my_lib/verilog_model/sky130_fd_sc_hd.v bad_mux.v tb_bad_mux.v
+iverilog -o ~/vsd/a.out ../my_lib/verilog_model/primitives.v  ../my_lib/verilog_model/sky130_fd_sc_hd.v bad_mux_net.v tb_bad_mux.v
+cd ~/vsd
+./a.out
 gtkwave tb_bad_mux.vcd
 ```
+<img width="998" height="692" alt="Screenshot from 2025-09-27 10-33-31" src="https://github.com/user-attachments/assets/e6dde509-f6b7-4ba4-8b66-714afa3c2870" />
+
+---
+
+### Lab 3
+
+```bash
+iverilog -o ~/vcd/a.out blocking_caveat.v tb_blocking_caveat.v
+```
+then,
+```bash
+cd ~/vcd
+./a.out
+gtkwave tb_blocking_caveat.vcd
+```
+<img width="1713" height="670" alt="Screenshot from 2025-09-27 10-49-56" src="https://github.com/user-attachments/assets/a105d57c-4a8b-4456-9719-b28ea206cb00" />
+
+
+To view the verilog file 
+```bash
+gedit blocking_caveat.v
+```
+<img width="826" height="495" alt="Screenshot from 2025-09-27 10-53-13" src="https://github.com/user-attachments/assets/bea46222-d0e2-4933-be56-5b9cc6c2044f" />
+
+#### Enter into the yosys by running it in the verilog_files directory:
+```bash
+cd ~/vsd/VLSI/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+yosys
+```
+Inside yosys, run
+```bash
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog blocking_caveat.v
+synth -top  blocking_caveat
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+<img width="766" height="538" alt="Screenshot from 2025-09-27 10-54-38" src="https://github.com/user-attachments/assets/12c6040f-a16f-476a-a1a8-dc84ffa3e500" />
+
+---
+## GLS of Ternary Operator MUX
+Gate-Level Simulation is performed using the synthesized netlist (ternary_operator_mux_net.v). This helps verify the functional correctness of the design after synthesis, using the actual standard cells and any delays (if modeled)
+
+```bash
+iverilog -o ~/vsd/a.out ../my_lib/verilog_model/primitives.v  ../my_lib/verilog_model/sky130_fd_sc_hd.v blocking_caveat_net.v tb_blocking_caveat.v
+cd ~/vsd
+./a.out
+gtkwave tb_blocking_caveat.vcd
+```
+<img width="1595" height="698" alt="Screenshot from 2025-09-27 11-03-47" src="https://github.com/user-attachments/assets/d25b484f-2bd5-4ad0-94b7-6aff777530d5" />
+
+---
+
+## Summary
+
+- Gate-Level Simulation (GLS): Validates netlist functionality, timing, and testability after synthesis.
+- Synthesis-Simulation Mismatch: Avoid by using synthesizable RTL code.
+- Blocking vs. Non-Blocking: Use blocking (=) for combinational, non-blocking (<=) for sequential logic.
