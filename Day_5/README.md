@@ -256,7 +256,7 @@ Waveform :
 - Only the selected input is passed to the output.
 - Avoids multiple nested `if-else` or `case` statements, making code concise.
 
-Netlist Dot File
+**Netlist Dot File**
 <img width="944" height="723" alt="Screenshot from 2025-09-27 21-29-32" src="https://github.com/user-attachments/assets/d1c68c31-3bc7-400e-a106-7a48ab640636" />
 
 ---
@@ -283,7 +283,7 @@ Waveform :
 - Loop executes sequentially during simulation; no latches are inferred.  
 - Provides a concise alternative to multiple if-else or case statements.
 
-Netlist Dot File
+**Netlist Dot File**
 
 <img width="840" height="844" alt="Screenshot from 2025-09-27 21-40-56" src="https://github.com/user-attachments/assets/7b2bfe02-0152-4206-8401-c63c805e49d3" />
 
@@ -304,7 +304,7 @@ Netlist Dot File
 
 **Verilog Code**
 
-RCA (`rca.v`): _8 bit Ripple Carry Adder_
+RCA (`rca.v`): 8 bit Ripple Carry Adder
 
 ```verilog
 module rca (input [7:0] num1 , input [7:0] num2 , output [8:0] sum);
@@ -336,36 +336,22 @@ endmodule
 
 **RTL Simulation**
 
-_Workflow_ :
+Waveform :
 
-![workflow12]()
-
-_Waveform_ :
-
-![waveform8]()
-
+<img width="1524" height="696" alt="Screenshot from 2025-09-27 22-22-38" src="https://github.com/user-attachments/assets/11ea33bd-e62a-44f5-8695-75a7a9539fb4" />
 
 **Synthesis**
+Netlist Dot File :
 
-_Workflow_ :
-
-![workflow13]()
-
-_Netlist Dot File_ :
-
-![dotfile5]()
+<img width="961" height="789" alt="Screenshot from 2025-09-27 22-58-58" src="https://github.com/user-attachments/assets/81a8b371-ed7e-4c55-a799-dd3a888f189c" />
 
 **Gate-Level Simulation**
 
-_Workflow_ :
-
-![workflow14]()
-
-_Waveform_ :
-
-![waveform9]()
-
 Thus, the *RTL Simulation*, *Synthesis*, and *Gate-level simulation* of the **8-bit Ripple Carry Adder** have been successfully completed and verified.
+
+Waveform:
+
+<img width="1425" height="718" alt="Screenshot from 2025-09-27 23-06-05" src="https://github.com/user-attachments/assets/642f8b0f-46cb-458d-9230-1e06daf0723a" />
 
 ---
 
@@ -373,8 +359,8 @@ Thus, the *RTL Simulation*, *Synthesis*, and *Gate-level simulation* of the **8-
 
 - **If-Else & Case:** Control logic in Verilog; `if-else` handles conditional decisions, while `case` is better for multi-way selection. Missing branches in either can cause **inferred latches**, which hold old values unintentionally.  
 - **Inferred Latches:** Occur when outputs are not assigned in all paths (incomplete `if`, `case`, or partial assignments). Always use `else` or `default` to avoid them.  
-- **For Loops:** Used inside `always` blocks for simulation-time iteration, simplifying repeated assignments.  
-- **Generate For Loops:** Create multiple hardware instances at synthesis time; useful for scalable designs like adders or multiplexers.  
+- **for Loops:** Used inside `always` blocks for simulation-time iteration, simplifying repeated assignments.  
+- **Generate for Loops:** Create multiple hardware instances at synthesis time; useful for scalable designs like adders or multiplexers.  
 - **Lab Highlights:**  
   - Incomplete `if`/`case` → inferred latches.  
   - `mux_generate` and `demux_generate` show how `for` loops reduce repetitive code.  
