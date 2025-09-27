@@ -112,6 +112,8 @@ cd ~/vcd/photos
 vvp ternary_operator_mux_sim.vvp 
 gtkwave tb_gtkwave tb_ternary_operator_mux.vcd
 ```
+<img width="995" height="704" alt="Screenshot from 2025-09-27 05-35-15" src="https://github.com/user-attachments/assets/6c7a718d-d675-453a-9f01-7ec33e02cab5" />
+
 To view the verilog file 
 ```bash
 gedit ternary_operator_mux.v
@@ -129,8 +131,17 @@ synth -top  ternary_operator_mux
 opt_clean -purge
 abc -liberty ~/vsd/VLSI/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 show
-
 ```
-<img width="995" height="704" alt="Screenshot from 2025-09-27 05-35-15" src="https://github.com/user-attachments/assets/6c7a718d-d675-453a-9f01-7ec33e02cab5" />
+<img width="788" height="581" alt="Screenshot from 2025-09-27 05-59-34" src="https://github.com/user-attachments/assets/44f99ec0-a71e-4e51-88f6-51f4cabf3434" />
+
+---
+## GLS of Ternary Operator MUX
+Gate-Level Simulation is performed using the synthesized netlist (ternary_operator_mux_net.v). This helps verify the functional correctness of the design after synthesis, using the actual standard cells and any delays (if modeled)
+
+```bash
+iverilog -o ~/vsd/a.out ~/vsd/VLSI/sky130RTLDesignAndSynthesisWorkshop/my_lib/verilog_model/primitives.v ~/vsd/VLSI/sky130RTLDesignAndSynthesisWorkshop/my_lib/verilog_model/sky130_fd_sc_hd.v ternary_operator_mux.v tb_ternary_operator_mux.v
+gtkwave tb_ternary_operator_mux.vcd
+```
+<img width="999" height="726" alt="Screenshot from 2025-09-27 07-13-54" src="https://github.com/user-attachments/assets/683212d5-2fde-4b36-aa88-14107362b330" />
 
 
