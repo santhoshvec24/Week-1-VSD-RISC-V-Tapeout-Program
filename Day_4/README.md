@@ -132,6 +132,7 @@ read_verilog ternary_operator_mux.v
 synth -top  ternary_operator_mux
 abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 show
+write_verilog ternary_operator_mux.v
 ```
 <img width="788" height="581" alt="Screenshot from 2025-09-27 05-59-34" src="https://github.com/user-attachments/assets/44f99ec0-a71e-4e51-88f6-51f4cabf3434" />
 
@@ -180,6 +181,7 @@ read_verilog bad_mux.v
 synth -top  bad_mux
 abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 show
+write_verilog bad_mux.v
 ```
 <img width="749" height="460" alt="Screenshot from 2025-09-27 10-28-47" src="https://github.com/user-attachments/assets/22e030e6-7ef7-4a45-baed-8be33dcfe6fd" />
 
@@ -229,6 +231,7 @@ read_verilog blocking_caveat.v
 synth -top  blocking_caveat
 abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 show
+write_verilog blocking_caveat.v
 ```
 <img width="766" height="538" alt="Screenshot from 2025-09-27 10-54-38" src="https://github.com/user-attachments/assets/12c6040f-a16f-476a-a1a8-dc84ffa3e500" />
 
