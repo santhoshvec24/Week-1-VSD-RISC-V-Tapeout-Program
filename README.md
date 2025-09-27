@@ -39,7 +39,7 @@ This document focuses on RTL design, simulation, and optimisation using **Yosys,
 
 [Day 1: Introduction to Verilog RTL Design & Synthesis](https://github.com/santhoshvec24/Week-1-VSD-RISC-V-Tapeout-Program/tree/main/Day_1))
 
-[Day 2: Timing Libraries, Synthesis Approaches, and Efficient Flip-Flop Coding Styles](#day-2-timing-libraries-synthesis-approaches-and-efficient-flip-flop-coding-styles)
+[day 2: Timing Libraries, Synthesis Approaches, and Efficient Flip-Flop Coding Styles](#day-2-timing-libraries-synthesis-approaches-and-efficient-flip-flop-coding-styles)
 
 [Day 3: Combinational and Sequential Optimization](#day-3-combinational-and-sequential-optimization)
 
