@@ -118,6 +118,8 @@ To view the verilog file
 ```bash
 gedit ternary_operator_mux.v
 ```
+<img width="817" height="790" alt="Screenshot from 2025-09-27 07-26-59" src="https://github.com/user-attachments/assets/38499bc7-ccf8-467f-b80c-e9b4afdb4fa5" />
+
 #### Enter into the yosys by running it in the verilog_files directory:
 ```bash
 cd ~/vsd/VLSI/sky130RTLDesignAndSynthesisWorkshop/verilog_files
