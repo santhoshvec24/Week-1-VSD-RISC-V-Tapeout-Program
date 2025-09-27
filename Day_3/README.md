@@ -192,6 +192,7 @@ synth -top opt_check
 opt_clean -purge
 abc -liberty ~/vsd/VLSI/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 show
+write_verilog opt_check.v
 ```
 
 <img width="895" height="638" alt="Screenshot from 2025-09-26 14-22-21" src="https://github.com/user-attachments/assets/5812f893-d2c8-4442-919e-c6974453210c" />
@@ -244,6 +245,7 @@ synth -top opt_check2
 opt_clean -purge
 abc -liberty ~/vsd/VLSI/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 show
+write_verilog opt_check2.v
 ```
 
 <img width="1920" height="922" alt="Screenshot from 2025-09-26 14-41-13" src="https://github.com/user-attachments/assets/b5b0f210-106c-44de-b406-354e4417488c" />
@@ -296,6 +298,7 @@ synth -top opt_check3
 opt_clean -purge
 abc -liberty ~/vsd/VLSI/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 show
+write_verilog opt_check3.v
 ```
 <img width="1920" height="922" alt="Screenshot from 2025-09-26 15-47-49" src="https://github.com/user-attachments/assets/1ff6146b-fa38-4720-a589-1dffd73f6ccd" />
 
@@ -346,6 +349,7 @@ synth -top dff_const1
 dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 show
+write_verilog dff_constant1.v
 ```
 ### Netlist Dot File
 
@@ -374,6 +378,7 @@ synth -top dff_const2
 dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 show
+write_verilog dff_const2.v
 ```
 
 #### Netlist Dot File
@@ -383,7 +388,7 @@ show
 ### Lab 6
 To see the logic of the verilog file
 ```bash
-
+gvim dff_const3.v
 ```
 <img width="1318" height="735" alt="Screenshot from 2025-09-26 19-59-23" src="https://github.com/user-attachments/assets/db0b8f77-500f-44d4-ae7c-1a19dba2b973" />
 
@@ -400,6 +405,7 @@ synth -top dff_const3
 dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 show
+write_verilog dff_const3.v
 ```
 
 <img width="1210" height="670" alt="Screenshot from 2025-09-26 20-03-05" src="https://github.com/user-attachments/assets/ab04ebe6-aa5f-4f0d-a240-027057b85b7a" />
