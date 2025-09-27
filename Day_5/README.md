@@ -9,8 +9,8 @@ Welcome to Day 5 of the RTL workshop! Today, we will cover optimization in Veril
 - [1. If-Else Statements in Verilog](#1-if-else-statements-in-verilog)
 - [2.Inferred Latches in Verilog](#2-inferred-latches)
 - [3.Labs for If-Else and Case Statements](#3-labs-for-if-else-and-case-statements)
-- [Verilog Looping Constructs: `for` loop & `generate for` loop](#verilog-looping-constructs-for-loop--generate-for-loop)
-- [Summary](#summary)
+- [4.Verilog Looping Constructs: `for` loop & `generate for` loop](#4-verilog-looping-constructs-for-loop--generate-for-loop)
+- [5.Summary](#5-summary)
 
 ---
 
@@ -171,7 +171,7 @@ Netlist Dot File is:
 <img width="736" height="627" alt="Screenshot from 2025-09-27 19-52-46" src="https://github.com/user-attachments/assets/617498c8-829f-4b40-90b5-236ec159001e" />
 
 ---
-## Verilog Looping Constructs: `for` loop & `generate for` loop
+## 4. Verilog Looping Constructs: `for` loop & `generate for` loop
 
 ### 1. `for` Loop
 
@@ -340,7 +340,7 @@ Waveform:
 
 ---
 
-## Summary
+## 5. Summary
 
 - **If-Else & Case:** Control logic in Verilog; `if-else` handles conditional decisions, while `case` is better for multi-way selection. Missing branches in either can cause **inferred latches**, which hold old values unintentionally.  
 - **Inferred Latches:** Occur when outputs are not assigned in all paths (incomplete `if`, `case`, or partial assignments). Always use `else` or `default` to avoid them.  
