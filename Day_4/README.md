@@ -103,5 +103,34 @@ Welcome to Day 4 of the RTL Workshop!
 
 ### Lab 1
 
+```bash
+iverilog -o ~/vcd/photos/ternary_operator_mux_sim.vvp  ternary_operator_mux.v tb_ternary_operator_mux.v
+```
+then,
+```bash
+cd ~/vcd/photos
+vvp ternary_operator_mux_sim.vvp 
+gtkwave tb_gtkwave tb_ternary_operator_mux.vcd
+```
+To view the verilog file 
+```bash
+gedit ternary_operator_mux.v
+```
+#### Enter into the yosys by running it in the verilog_files directory:
+```bash
+cd ~/vsd/VLSI/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+yosys
+```
+Inside yosys, run
+```bash
+read_liberty -lib ~/vsd/VLSI/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog ternary_operator_mux.v
+synth -top  ternary_operator_mux
+opt_clean -purge
+abc -liberty ~/vsd/VLSI/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+
+```
+<img width="995" height="704" alt="Screenshot from 2025-09-27 05-35-15" src="https://github.com/user-attachments/assets/6c7a718d-d675-453a-9f01-7ec33e02cab5" />
 
 
