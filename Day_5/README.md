@@ -126,26 +126,32 @@ endmodule
 ## 3. Labs for If-Else and Case Statements
 
 ### Lab 1: Incomplete If Statement
+
 The incomplete if verilog code is 
 
 <img width="816" height="302" alt="Screenshot from 2025-09-27 18-58-18" src="https://github.com/user-attachments/assets/5142f3bb-1510-4407-aacb-52a9296b73d2" />
 
 The gtkwave is:
+
 <img width="993" height="706" alt="Screenshot from 2025-09-27 18-56-35" src="https://github.com/user-attachments/assets/ff4a9e76-c271-4316-9bb5-c38c8a856987" />
 
 The Netlist Dot File:
+
 <img width="819" height="557" alt="Screenshot from 2025-09-27 19-02-07" src="https://github.com/user-attachments/assets/dd58d450-9822-427b-83fc-f6c97fba4d54" />
 
 ---
 
 ### Lab 2: Nested If-Else
 The incomplete nested if-else verilog code is
+
 <img width="716" height="468" alt="Screenshot from 2025-09-27 19-21-45" src="https://github.com/user-attachments/assets/b60a9483-2981-4e25-9070-0978d62c20f5" />
 
 gtkwave is:
+
 <img width="1001" height="702" alt="Screenshot from 2025-09-27 19-08-36" src="https://github.com/user-attachments/assets/1ffd0ade-c34e-4c4f-9111-f78df1f092cf" />
 
 Netlist Dot File is:
+
 <img width="743" height="469" alt="Screenshot from 2025-09-27 19-23-30" src="https://github.com/user-attachments/assets/37bb3d74-2e9e-44e8-9c28-5b7b4e36a9a7" />
 
 ---
