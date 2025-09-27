@@ -238,30 +238,15 @@ endgenerate
 
 **Verilog Code**
 
-```verilog
-module mux_generate (input i0 , input i1, input i2 , input i3 , input [1:0] sel  , output reg y);
-wire [3:0] i_int;
-assign i_int = {i3,i2,i1,i0};
-integer k;
-always @ (*)
-begin
-for(k = 0; k < 4; k=k+1) begin
-        if(k == sel)
-                y = i_int[k];
-end
-end
-endmodule
-```
+<img width="734" height="406" alt="Screenshot from 2025-09-27 21-27-29" src="https://github.com/user-attachments/assets/06c034b6-5c99-462e-b26e-73abfcb64110" />
+
 
 **Simulation**
 
-_Workflow_ :
+Waveform :
 
-![workflow10]()
+<img width="1427" height="773" alt="Screenshot from 2025-09-27 21-23-55" src="https://github.com/user-attachments/assets/65bdac1c-4f44-4235-990b-bc03e6681376" />
 
-_Waveform_ :
-
-![waveform6]()
 
 
 - Implements a 4-to-1 multiplexer using a `for` loop.
@@ -271,6 +256,9 @@ _Waveform_ :
 - Only the selected input is passed to the output.
 - Avoids multiple nested `if-else` or `case` statements, making code concise.
 
+Netlist Dot File
+<img width="944" height="723" alt="Screenshot from 2025-09-27 21-29-32" src="https://github.com/user-attachments/assets/d1c68c31-3bc7-400e-a106-7a48ab640636" />
+
 ---
 
 
@@ -278,31 +266,15 @@ _Waveform_ :
 
 **Verilog Code**
 
-```verilog
-module demux_generate (output o0 , output o1, output o2 , output o3, output o4, output o5, output o6 , output o7 , input [2:0] sel  , input i);
-reg [7:0]y_int;
-assign {o7,o6,o5,o4,o3,o2,o1,o0} = y_int;
-integer k;
-always @ (*)
-begin
-y_int = 8'b0;
-for(k = 0; k < 8; k++) begin
-        if(k == sel)
-                y_int[k] = i;
-end
-end
-endmodule
-```
+Verilog Code:
+
+<img width="713" height="471" alt="Screenshot from 2025-09-27 21-31-40" src="https://github.com/user-attachments/assets/d2108660-a88d-4246-8d66-886106777b7f" />
 
 **Simulation**
 
-_Workflow_ :
+Waveform :
 
-![workflow11]()
-
-_Waveform_ :
-
-![waveform7]()  
+<img width="1432" height="655" alt="Screenshot from 2025-09-27 21-37-44" src="https://github.com/user-attachments/assets/c4fbc93f-0bc7-4cc3-a6bb-622b8c1f1e8f" />
 
 - Implements an 8-output demultiplexer using a `for` loop.  
 - Outputs `o0`–`o7` are packed into an 8-bit register `y_int` for easy indexing.  
@@ -310,6 +282,10 @@ _Waveform_ :
 - Routes the single input `i` to the selected output while others remain 0.  
 - Loop executes sequentially during simulation; no latches are inferred.  
 - Provides a concise alternative to multiple if-else or case statements.
+
+Netlist Dot File
+
+<img width="840" height="844" alt="Screenshot from 2025-09-27 21-40-56" src="https://github.com/user-attachments/assets/7b2bfe02-0152-4206-8401-c63c805e49d3" />
 
 ---
 
