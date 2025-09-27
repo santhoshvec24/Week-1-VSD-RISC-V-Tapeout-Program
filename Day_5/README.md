@@ -67,7 +67,7 @@ end else begin
 end
 ```
 
-#### Nested If-Else
+### Nested If-Else
 
 ```verilog
 if (condition1) begin
@@ -81,25 +81,28 @@ end
 
 ---
 
-## 2. Inferred Latches in Verilog
+### Case Statement 
+The `if-else` and `case` statement should be in the `always` block and the variable declared in inside it should be `reg <variable>` .
 
-**Inferred latches** occur when a combinational logic block does not assign a value to a variable in all possible execution paths. This causes the synthesis tool to infer a latch, which may not be the designer’s intention.
-
-### Example of Latch Inference
+#### Caveats with case statement
+- Due to the incomplete `case` statement, it will become inferred latch .
+- Due to this, the incomplete case statements is latched with the output.
+- To avoid this, code `case` with default case statement.
 
 ```verilog
-module ex (
-    input wire a, b, sel,
-    output reg y
-);
-    always @(a, b, sel) begin
-        if (sel == 1'b1)
-            y = a; // No 'else' - y is not assigned when sel == 0
-    end
-endmodule
+case (expression)
+    value1 : begin
+                 // statements for value1
+             end
+    value2 : begin
+                 // statements for value2
+             end
+    ...
+    default : begin
+                 // statements if none of the above match
+              end
+endcase
 ```
-
-**Problem**: When `sel` is 0, `y` is not assigned, so a latch is inferred.
 
 #### Solution: Add Else or Default Case
 ```verilog
@@ -115,6 +118,8 @@ module ex (
     end
 endmodule
 ```
+
+
 
 ---
 
