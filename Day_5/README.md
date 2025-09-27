@@ -126,121 +126,60 @@ endmodule
 ## 3. Labs for If-Else and Case Statements
 
 ### Lab 1: Incomplete If Statement
+The incomplete if verilog code is 
 
-```verilog
-module incomp_if (input i0, input i1, input i2, output reg y);
-always @(*) begin
-    if (i0)
-        y <= i1;
-end
-endmodule
-```
-![in_comp_if](https://github.com/user-attachments/assets/91d1cc1d-bb3a-4ea8-a272-363414777868)
+<img width="816" height="302" alt="Screenshot from 2025-09-27 18-58-18" src="https://github.com/user-attachments/assets/5142f3bb-1510-4407-aacb-52a9296b73d2" />
 
----
+The gtkwave is:
+<img width="993" height="706" alt="Screenshot from 2025-09-27 18-56-35" src="https://github.com/user-attachments/assets/ff4a9e76-c271-4316-9bb5-c38c8a856987" />
 
-### Lab 2: Synthesis Result of Lab 1
-
-![incomp_synth](https://github.com/user-attachments/assets/691045e7-39e0-4e6c-98bd-511b501fbe35)
+The Netlist Dot File:
+<img width="819" height="557" alt="Screenshot from 2025-09-27 19-02-07" src="https://github.com/user-attachments/assets/dd58d450-9822-427b-83fc-f6c97fba4d54" />
 
 ---
 
-### Lab 3: Nested If-Else
+### Lab 2: Nested If-Else
+The incomplete nested if-else verilog code is
+<img width="716" height="468" alt="Screenshot from 2025-09-27 19-21-45" src="https://github.com/user-attachments/assets/b60a9483-2981-4e25-9070-0978d62c20f5" />
 
-```verilog
-module incomp_if2 (input i0, input i1, input i2, input i3, output reg y);
-always @(*) begin
-    if (i0)
-        y <= i1;
-    else if (i2)
-        y <= i3;
-end
-endmodule
-```
-![icomp2](https://github.com/user-attachments/assets/2f614956-e4af-4d29-80ae-13a167e7831d)
+gtkwave is:
+<img width="1001" height="702" alt="Screenshot from 2025-09-27 19-08-36" src="https://github.com/user-attachments/assets/1ffd0ade-c34e-4c4f-9111-f78df1f092cf" />
+
+Netlist Dot File is:
+<img width="743" height="469" alt="Screenshot from 2025-09-27 19-23-30" src="https://github.com/user-attachments/assets/37bb3d74-2e9e-44e8-9c28-5b7b4e36a9a7" />
 
 ---
 
-### Lab 4: Synthesis Result of Lab 3
 
-![incomp2synth](https://github.com/user-attachments/assets/880ff7bb-23fb-4362-bf8f-a2494a854b53)
+### Lab 3: Complete Case Statement
+The complete case statement verilog code of comp_case is
 
----
+<img width="716" height="436" alt="Screenshot from 2025-09-27 19-33-44" src="https://github.com/user-attachments/assets/67662a54-ce17-4694-b397-e4ea3367e28f" />
 
-### Lab 5: Complete Case Statement
+gtkwave is:
 
-```verilog
-module comp_case (input i0, input i1, input i2, input [1:0] sel, output reg y);
-always @(*) begin
-    case(sel)
-        2'b00 : y = i0;
-        2'b01 : y = i1;
-        default : y = i2;
-    endcase
-end
-endmodule
-```
-![compcase](https://github.com/user-attachments/assets/cfe97c45-a487-4f06-b4a2-74b3a61bee14)
+<img width="999" height="698" alt="Screenshot from 2025-09-27 19-28-47" src="https://github.com/user-attachments/assets/8351776e-4827-4277-8b83-2fe962cb69ce" />
 
----
+Netlist Dot File is:
 
-### Lab 6: Synthesis Result of Lab 5
+<img width="890" height="545" alt="Screenshot from 2025-09-27 19-35-04" src="https://github.com/user-attachments/assets/84abd83d-e010-4e06-8fb8-4a7e3a329b1f" />
 
-![compcase_synth](https://github.com/user-attachments/assets/8c871511-6e55-4e80-be11-86e9efd87cad)
 
----
+### Lab 4: Incomplete Case Handling
 
-### Lab 7: Incomplete Case Handling
+The bad_case verilog code is
 
-```verilog
-module bad_case (
-    input i0, input i1, input i2, input i3,
-    input [1:0] sel,
-    output reg y
-);
-always @(*) begin
-    case(sel)
-        2'b00: y = i0;
-        2'b01: y = i1;
-        2'b10: y = i2;
-        2'b1?: y = i3; // '?' is a wildcard; be careful with incomplete cases!
-    endcase
-end
-endmodule
-```
-![badcase](https://github.com/user-attachments/assets/4ccf37aa-5502-4750-bedb-9b2ec0748a53)
+<img width="726" height="373" alt="Screenshot from 2025-09-27 19-51-46" src="https://github.com/user-attachments/assets/e3352bc0-625d-4576-8e8f-e70ad5818d4a" />
+
+gtkwave is:
+
+<img width="1361" height="787" alt="Screenshot from 2025-09-27 19-50-26" src="https://github.com/user-attachments/assets/b30f6611-b268-47ea-b564-73f9faf8ff0d" />
+
+Netlist Dot File is:
+
+<img width="736" height="627" alt="Screenshot from 2025-09-27 19-52-46" src="https://github.com/user-attachments/assets/617498c8-829f-4b40-90b5-236ec159001e" />
 
 ---
-
-### Lab 8: Partial Assignments in Case
-
-```verilog
-module partial_case_assign (
-    input i0, input i1, input i2,
-    input [1:0] sel,
-    output reg y, output reg x
-);
-always @(*) begin
-    case(sel)
-        2'b00: begin
-            y = i0;
-            x = i2;
-        end
-        2'b01: y = i1;
-        default: begin
-            x = i1;
-            y = i2;
-        end
-    endcase
-end
-endmodule
-```
-![Screenshot_2025-05-28_12-39-30](https://github.com/user-attachments/assets/3f6068f3-726d-4192-b3cd-f88b3611e752)
-
-> **Note:** Steps to perform the above labs are shown in [Day 1](https://github.com/Ahtesham18112011/RTL_workshop/tree/main/Day_1).
-
----
-
 ## 4. For Loops in Verilog
 
 A **for loop** is used within procedural blocks (`initial`, `always`, tasks/functions) to execute statements multiple times based on a loop counter.
