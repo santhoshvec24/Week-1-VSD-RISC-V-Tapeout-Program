@@ -6,7 +6,7 @@ Welcome to Day 5 of the RTL workshop! Today, we will cover optimization in Veril
 
 ## Content
 
-- If-Else Statements in Verilog
+- [1. If-Else Statements in Verilog](#1-if-else-statements-in-verilog)
 - Inferred Latches in Verilog
 - Labs for If-Else and Case Statements
 - Verilog Looping Constructs: `for` loop & `generate for` loop
